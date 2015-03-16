@@ -1,5 +1,7 @@
 "use strict";
 
+var Promise = Promise || ES6Promise.Promise; // do this to access Promise directly
+
 // Running Chrome 42 or later
 // because using fetch api
 window.onload = function() {
@@ -10,7 +12,7 @@ window.onload = function() {
 	var getText = function () {
 		return document.getElementById('members').value;
 	};
-	var createText = function(input_text) {
+	var create_text = function(input_text) {
 		var result = [];
 		var arr = input_text.split(/\r\n|\r|\n/);
 		for (var i = 0; i < arr.length; i++) {
@@ -40,7 +42,7 @@ window.onload = function() {
 	
 	var show_element = function(id_name ,data) {
 		_delete_element(id_name);
-		_create_element_element(id_name, data);
+		_create_element(id_name, data);
 	}
 
 	var run = function() {
